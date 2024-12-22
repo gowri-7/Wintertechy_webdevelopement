@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <img src="download.jpeg" alt="image" >
+        <h1 id="CurrentTime"></h1>
+        <h3 id="CurrentDate"></h3>
+        <h4 id="CurrentDay"></h4>
+        <h2></h2><div class="QUOTES">
+            <p>Thought Of The Day</p>
+            <h2 id="quote"></h2>
+
+    </div>
+<script>
+    const timeElement = document.getElementById("CurrentTime");
+    const dateElement = document.getElementById("CurrentDate"); // Get the date element
+    const quoteElement = document.getElementById("quote");
+    const dayElement = document.getElementById("CurrentDay")
+        
+    const quotes = [
+                    "TIME AND TIDE WAITS FOR NO MAN.",
+                    "The only way to do great work is to love what you do.",
+                    "Strive not to be a success, but rather to be of value.",
+                    "Two roads diverged in a wood, and I—I took the one less traveled by, And that has made all the difference.",
+                    "The mind is everything. What you think you become.",
+                    "The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart."
+    ];
+        
+    function updateTime() {
+        const now = new Date();
+        timeElement.textContent = now.toLocaleTimeString();
+    }
+        
+ 
+    function updateDate() {
+        const now = new Date();
+        const options = { day: '2-digit', month: 'long', year: 'numeric' }
+        const dayOptions = { weekday: 'long' }; 
+        dayElement.textContent = now.toLocaleDateString('en-US', dayOptions); // Set the weekday
+
+        dateElement.textContent = now.toLocaleDateString('en-US', options);
+    }
+
+    function displayRandomQuote() {
+        const randomIndex = Math.floor(Math.random() * quotes.length);
+        quoteElement.textContent = quotes[randomIndex];
+    }
+        
+    updateTime();
+    updateDate(); // Call the updateDate function
+    setInterval(updateTime, 1000);
+        
+    displayRandomQuote();
+</script>
+</body>
+</html>
