@@ -1,61 +1,64 @@
-*{
-    margin: 0;
+* {
     padding: 0;
-    box-sizing: border-box;
+    margin: 0;
+    font-family: "Noto Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
 }
-.container{
-    width: 100%;
-    height: 100vh;
+
+body {
+    background-color: black;
+    color: white;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
+    height: 100vh;
+    font-size: 30px;
 }
-.container img{
-    position: absolute;
-    width: 100%;
-    height: 200% ;
-    opacity: 0.3;
 
+h1 {
+    padding-bottom: 2em;
 }
-.container h1{
-    position: absolute;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    top: 60%;
-    left:50%;
-    transform: translate(-50%,-50%);
-    color: black;
-    font-size: 75px;
-
-
+p{
+    padding: 1em;
 }
-.container h3{
-    position: absolute;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    top: 40%;
-    left:50%;
-    transform: translate(-50%,-50%);
-    color: black;
-    font-size: 40px;
-
+#container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.2em;
 }
-.container h4{
-    position: absolute;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    top: 47%;
-    left:50%;
-    transform: translate(-50%,-50%);
-    color: black;
-    font-size: 40px;
 
-}
-.QUOTES{
-    width: 100%;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    position: relative;
-    top: 4cm;
+.btn-box {
+    height: 2em;
+    width: 2em;
     text-align: center;
-    bottom: 50%;
-    color: indianred;
-    font-size: 20px;
+    border-radius: 0.3em;
+    background-color: #f4f1f1;
+    font-size: 1em;
+    cursor: pointer;
+    color: black;
+    border: 2px solid white;
+}
+.btn-box:hover{
+    transform: scale(1.05); 
+    background-color: white;
+}
+.reset{
+    margin: 1em;
+    padding: 0.5em;
+    border-radius: 0.8em;
+    background-color: darkred;
+    border: none;
+    color: white;
+    font-size: 0.5em;
+    align-items: normal;
+    cursor: pointer;
+}
+.reset:hover{
+    background-color: rgb(193, 17, 17);
+    transform: scale(1.05); 
 }
